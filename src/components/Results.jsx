@@ -26,30 +26,21 @@ export const Results = () => {
             <h1>Bienvenido, {user?.name}</h1>
             <button onClick={handleLogout}>Cerrar sesión</button>
             <button onClick={() => navigate('/add-location')}>Agregar Sitio Turístico</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Ubicación</th>
-                        <th>Reseña</th>
-                        <th>Calificación</th>
-                        <th>Imagen</th> {/* Nueva columna para la imagen */}
-                    </tr>
-                </thead>
-                <tbody>
-                    {locations.map((location) => (
-                        <tr key={location.id}>
-                            <td>{location.name}</td>
-                            <td>{location.location}</td>
-                            <td>{location.review}</td>
-                            <td>{location.rating}</td>
-                            <td>
-                                <img src={location.imageUrl} alt={location.name} className="location-image" /> {/* Imagen */}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <button onClick={() => navigate('/edit-profile')}>Editar mi perfil</button>
+
+            <div className="cards-container">
+                {locations.map((location) => (
+                    <div key={location.id} className="card">
+                        <img src={location.imageUrl} alt={location.name} className="location-image" />
+                        <div className="card-content">
+                            <h3>{location.name}</h3>
+                            <p>{location.location}</p>
+                            <p>{location.review}</p>
+                            <p><strong>Calificación: </strong>{location.rating}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </main>
     );
 };

@@ -3,6 +3,7 @@ import { Results } from "../components/Results";
 import { Login } from "../components/Login";
 import { AddLocation } from "../components/AddLocation";
 import { LandingPage } from '../components/LandingPage';
+import { EditProfile } from '../components/EditProfile';
 
 export const router = createBrowserRouter([
     {
@@ -18,7 +19,11 @@ export const router = createBrowserRouter([
         Component: AddLocation
     },
     {
-    path: '/landingpage',
+        path: '/landingpage',
         Component: LandingPage
-    }
+    },
+    {
+        path: '/edit-profile',
+        Component: EditProfile
+    }    
 ]);
