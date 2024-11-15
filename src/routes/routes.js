@@ -4,6 +4,7 @@ import { Login } from "../components/Login";
 import { AddLocation } from "../components/AddLocation";
 import { LandingPage } from '../components/LandingPage';
 import { EditProfile } from '../components/EditProfile';
+import { Register } from '../components/Register';
 
 export const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
     {
         path: '/results',
         Component: Results
+    },
+    {
+        path: '/register',
+        Component: Register
     },
     {
         path: '/add-location',
@@ -25,5 +30,5 @@ export const router = createBrowserRouter([
     {
         path: '/edit-profile',
         Component: EditProfile
-    }    
+    }   
 ]);

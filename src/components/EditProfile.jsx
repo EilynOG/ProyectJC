@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/stylesEditprofile.css'
+import { Navbar } from './Navbar'; // Asegúrate de que el Navbar esté importado
+import '../css/stylesEditprofile.css';
 
 export const EditProfile = () => {
     const navigate = useNavigate();
@@ -45,11 +46,12 @@ export const EditProfile = () => {
     };
 
     const goToForum = () => {
-        navigate('/forum'); // Cambiar a la ruta del foro si es necesario
+        navigate('/results');
     };
 
     return (
         <div className="edit-profile">
+            <Navbar /> {/* Se ha agregado el Navbar aquí */}
             <h1>Editar Perfil</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">

@@ -17,8 +17,6 @@ export const Login = () => {
             alert('Usuario o contraseña incorrectos');
             return;
         }
-
-        // Guardar usuario en localStorage
         localStorage.setItem('user', JSON.stringify(user));
         navigate('/results');
     };

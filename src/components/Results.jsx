@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Navbar } from './Navbar';
 
 export const Results = () => {
     const navigate = useNavigate();
@@ -23,10 +24,8 @@ export const Results = () => {
 
     return (
         <main className="results">
+            <Navbar /> {}
             <h1>Bienvenido, {user?.name}</h1>
-            <button onClick={handleLogout}>Cerrar sesión</button>
-            <button onClick={() => navigate('/add-location')}>Agregar Sitio Turístico</button>
-            <button onClick={() => navigate('/edit-profile')}>Editar mi perfil</button>
 
             <div className="cards-container">
                 {locations.map((location) => (

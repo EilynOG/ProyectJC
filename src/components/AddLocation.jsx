@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Navbar } from './Navbar'; // Asegúrate de que el Navbar esté importado
 
 export const AddLocation = () => {
     const [name, setName] = useState("");
@@ -117,13 +118,9 @@ export const AddLocation = () => {
         }
     };
 
-    const handleLogout = () => {
-        localStorage.removeItem("user");
-        navigate("/");
-    };
-
     return (
         <main className="add-location">
+            <Navbar /> {/* Se ha agregado el Navbar aquí */}
             <h1>{editMode ? "Editar Sitio Turístico" : "Agregar Sitio Turístico"}</h1>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -205,11 +202,6 @@ export const AddLocation = () => {
                     ))}
                 </tbody>
             </table>
-
-            <div className="action-buttons">
-                <button onClick={() => navigate("/results")}>Ver Foro</button>
-                <button onClick={handleLogout}>Cerrar Sesión</button>
-            </div>
         </main>
     );
 };
