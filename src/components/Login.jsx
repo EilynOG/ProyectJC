@@ -17,6 +17,7 @@ export const Login = () => {
             return;
         }
         navigate('/');
+
         if (user){
             navigate('/results')
         }
