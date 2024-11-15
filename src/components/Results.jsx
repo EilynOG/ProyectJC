@@ -33,6 +33,7 @@ export const Results = () => {
                         <th>Ubicación</th>
                         <th>Reseña</th>
                         <th>Calificación</th>
+                        <th>Imagen</th> {/* Nueva columna para la imagen */}
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +43,9 @@ export const Results = () => {
                             <td>{location.location}</td>
                             <td>{location.review}</td>
                             <td>{location.rating}</td>
+                            <td>
+                                <img src={location.imageUrl} alt={location.name} className="location-image" /> {/* Imagen */}
+                            </td>
                         </tr>
                     ))}
                 </tbody>

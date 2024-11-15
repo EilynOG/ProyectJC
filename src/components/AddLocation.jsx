@@ -12,11 +12,11 @@ export const AddLocation = () => {
     const [editLocationId, setEditLocationId] = useState(null);
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("user"));
+
     useEffect(() => {
         fetch('https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/blogs')
             .then(response => response.json())
             .then(data => {
-
                 const userLocations = data.filter(
                     (location) => location.creator === user?.name
                 );
@@ -26,18 +26,16 @@ export const AddLocation = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         const newLocation = { 
             name, 
             location, 
             review, 
             rating, 
-            imageUrl,
+            imageUrl, 
             creator: user?.name 
         };
 
         if (editMode) {
-
             const response = await fetch(`https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/blogs/${editLocationId}`, {
                 method: 'PUT',
                 headers: {
@@ -69,14 +67,12 @@ export const AddLocation = () => {
             }
         }
 
-
         const updatedLocations = await fetch('https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/blogs')
             .then(res => res.json());
         const userLocations = updatedLocations.filter(
             (location) => location.creator === user?.name
         );
         setLocations(userLocations);
-
 
         setName('');
         setLocation('');
@@ -102,7 +98,6 @@ export const AddLocation = () => {
 
         if (response.ok) {
             alert('Sitio turístico eliminado con éxito');
-
             const updatedLocations = await fetch('https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/blogs')
                 .then(res => res.json());
             const userLocations = updatedLocations.filter(
@@ -114,14 +109,17 @@ export const AddLocation = () => {
         }
     };
 
-
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-
             const imageUrl = URL.createObjectURL(file);
-            setImageUrl(imageUrl); 
+            setImageUrl(imageUrl);
         }
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        navigate("/");
     };
 
     return (
@@ -207,6 +205,11 @@ export const AddLocation = () => {
                     ))}
                 </tbody>
             </table>
+
+            <div className="action-buttons">
+                <button onClick={() => navigate("/results")}>Ver Foro</button>
+                <button onClick={handleLogout}>Cerrar Sesión</button>
+            </div>
         </main>
     );
 };

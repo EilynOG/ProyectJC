@@ -63,3 +63,8 @@ table tr:nth-child(even) {
 table tr:hover {
     background-color: #444444;
 }
+.location-image {
+    width: 100px; 
+    height: auto;
+    border-radius: 5px;
+}
