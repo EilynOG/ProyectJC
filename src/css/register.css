@@ -9,8 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    height: 100vh;
+    margin: 0;
 }
 
 .body-register .background-image {
@@ -22,7 +22,7 @@
     background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.6;
     z-index: -1;
 }
 

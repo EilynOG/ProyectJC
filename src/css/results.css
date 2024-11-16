@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #1CB2A7;
+    --secondary-color: #93F781;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --light-text: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body-results {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.body-results .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.body-results main {
+    margin-top: 80px;
+}
+
+.body-results .welcome-section {
+    background-color: var(--secondary-color);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.body-results .welcome-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.body-results .welcome-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.body-results .welcome-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.body-results .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.body-results .btn:hover {
+    background-color: #159b91;
+}
+
+.body-results .posts-section {
+    padding: 4rem 0;
+}
+
+.body-results .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.body-results .post-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.body-results .post-card:hover {
+    transform: translateY(-5px);
+}
+
+.body-results .post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.body-results .post-content {
+    padding: 1.5rem;
+}
+
+.body-results .post-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.body-results .post-excerpt {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.body-results .post-meta {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.body-results footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    .body-results .welcome-content h1 {
+        font-size: 2rem;
+    }
+
+    .body-results .welcome-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .body-results .posts-grid {
+        grid-template-columns: 1fr;
+    }
+}

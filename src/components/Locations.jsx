@@ -32,8 +32,8 @@ export const Locations = () => {
                         <ul>
                             <li><Link to="/">Inicio</Link></li>
                             <li><Link to="/locations">Destinos</Link></li>
-                            <li><Link to="/foro">Foro</Link></li>
-                            <li><Link to="/contacto">Contacto</Link></li>
+                            <li><Link to="/about">Nosotros</Link></li>
+                            <li><Link to="/login">Iniciar sesión</Link></li>
                         </ul>
                         </nav>
                     </div>

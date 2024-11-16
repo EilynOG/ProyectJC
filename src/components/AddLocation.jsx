@@ -119,89 +119,97 @@ export const AddLocation = () => {
     };
 
     return (
-        <main className="add-location">
-            <Navbar /> {/* Se ha agregado el Navbar aquí */}
-            <h1>{editMode ? "Editar Sitio Turístico" : "Agregar Sitio Turístico"}</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Nombre:
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Ubicación:
-                    <input
-                        type="text"
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Reseña:
-                    <textarea
-                        value={review}
-                        onChange={(e) => setReview(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Calificación:
-                    <input
-                        type="number"
-                        value={rating}
-                        onChange={(e) => setRating(e.target.value)}
-                        required
-                        min="0"
-                        max="5"
-                    />
-                </label>
-                <label>
-                    Imagen:
-                    <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                    />
-                    {imageUrl && <img src={imageUrl} alt="Vista previa" width="100" />}
-                </label>
-                <button type="submit">{editMode ? "Actualizar Sitio" : "Agregar Sitio"}</button>
-            </form>
-
-            <h2>Mis Sitios Turísticos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Ubicación</th>
-                        <th>Reseña</th>
-                        <th>Calificación</th>
-                        <th>Imagen</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {locations.map((location) => (
-                        <tr key={location.id}>
-                            <td>{location.name}</td>
-                            <td>{location.location}</td>
-                            <td>{location.review}</td>
-                            <td>{location.rating}</td>
-                            <td>
-                                <img src={location.imageUrl} alt={location.name} width="100" />
-                            </td>
-                            <td>
-                                <button onClick={() => handleEdit(location)}>Editar</button>
-                                <button onClick={() => handleDelete(location.id)}>Eliminar</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </main>
+        <>
+            <div className="body-agregar">
+                <Navbar /> {/* Se ha agregado el Navbar aquí */}
+                <main className="container">
+                    <section className="form-section">
+                        <h2>{editMode ? "Editar Sitio Turístico" : "Agregar Sitio Turístico"}</h2>
+                        <form onSubmit={handleSubmit} id="add-site-form">
+                            <div>
+                                <label htmlFor="name">Nombre:</label>
+                                <input
+                                    type="text"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="ubicacion">Ubicación:</label>
+                                <input
+                                    type="text"
+                                    value={location}
+                                    onChange={(e) => setLocation(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="reseña">Reseña:</label>
+                                <textarea
+                                    value={review}
+                                    onChange={(e) => setReview(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="calificacion">Calificación:</label>
+                                <input
+                                    type="number"
+                                    value={rating}
+                                    onChange={(e) => setRating(e.target.value)}
+                                    required
+                                    min="0"
+                                    max="5"
+                                />
+                            </div>
+                            <div>
+                                <label>
+                                    Imagen:
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={handleImageChange}
+                                    />
+                                    {imageUrl && <img src={imageUrl} alt="Vista previa" width="100" />}
+                                </label>
+                            </div>
+                            <button type="submit">{editMode ? "Actualizar Sitio" : "Agregar Sitio"}</button>
+                        </form>
+                    </section>
+                
+                    <h2>Mis Sitios Turísticos</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Ubicación</th>
+                                <th>Reseña</th>
+                                <th>Calificación</th>
+                                <th>Imagen</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {locations.map((location) => (
+                                <tr key={location.id}>
+                                    <td>{location.name}</td>
+                                    <td>{location.location}</td>
+                                    <td>{location.review}</td>
+                                    <td>{location.rating}</td>
+                                    <td>
+                                        <img src={location.imageUrl} alt={location.name} width="100" />
+                                    </td>
+                                    <td>
+                                        <button onClick={() => handleEdit(location)}>Editar</button>
+                                        <button onClick={() => handleDelete(location.id)}>Eliminar</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </main>
+            </div>
+        </>
     );
 };
