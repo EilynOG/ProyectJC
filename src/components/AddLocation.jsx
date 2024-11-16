@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from './Navbar'; // Asegúrate de que el Navbar esté importado
+import '../css/addlocation.css';
 
 export const AddLocation = () => {
     const [name, setName] = useState("");
@@ -164,50 +165,50 @@ export const AddLocation = () => {
                                 />
                             </div>
                             <div>
-                                <label>
-                                    Imagen:
-                                    <input
-                                        type="file"
-                                        accept="image/*"
-                                        onChange={handleImageChange}
-                                    />
-                                    {imageUrl && <img src={imageUrl} alt="Vista previa" width="100" />}
-                                </label>
+                                <label htmlFor="image">Imagen:</label>
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleImageChange}
+                                />
+                                {imageUrl && <img src={imageUrl} alt="Vista previa" width="100" />}
                             </div>
-                            <button type="submit">{editMode ? "Actualizar Sitio" : "Agregar Sitio"}</button>
+                            <button type="submit" className="boton-add">{editMode ? "Actualizar Sitio" : "Agregar Sitio"}</button>
                         </form>
                     </section>
                 
-                    <h2>Mis Sitios Turísticos</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Ubicación</th>
-                                <th>Reseña</th>
-                                <th>Calificación</th>
-                                <th>Imagen</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {locations.map((location) => (
-                                <tr key={location.id}>
-                                    <td>{location.name}</td>
-                                    <td>{location.location}</td>
-                                    <td>{location.review}</td>
-                                    <td>{location.rating}</td>
-                                    <td>
-                                        <img src={location.imageUrl} alt={location.name} width="100" />
-                                    </td>
-                                    <td>
-                                        <button onClick={() => handleEdit(location)}>Editar</button>
-                                        <button onClick={() => handleDelete(location.id)}>Eliminar</button>
-                                    </td>
+                    <section className="table-section">
+                        <h2>Mis Sitios Turísticos</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Ubicación</th>
+                                    <th>Reseña</th>
+                                    <th>Calificación</th>
+                                    <th>Imagen</th>
+                                    <th>Acciones</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {locations.map((location) => (
+                                    <tr key={location.id}>
+                                        <td>{location.name}</td>
+                                        <td>{location.location}</td>
+                                        <td>{location.review}</td>
+                                        <td>{location.rating}</td>
+                                        <td>
+                                            <img src={location.imageUrl} alt={location.name} width="100" />
+                                        </td>
+                                        <td>
+                                            <button onClick={() => handleEdit(location)} className="boton-editar">Editar</button>
+                                            <button onClick={() => handleDelete(location.id)} className="boton-eliminar">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </section>
                 </main>
             </div>
         </>

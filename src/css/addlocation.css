@@ -1,0 +1,169 @@
+:root {
+    --primary-color: #1CB2A7;
+    --secondary-color: #93F781;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --light-text: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body-agregar {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.body-agregar .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.body-agregar main {
+    margin-top: 80px;
+    padding: 2rem 0;
+}
+
+.body-agregar .form-section, .body-agregar .table-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.body-agregar .form-section{
+    padding-top: 15vh;
+}
+
+.body-agregar h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.body-agregar form {
+    display: grid;
+    gap: 1rem;
+}
+
+.body-agregar label {
+    font-weight: bold;
+}
+
+.body-agregar input, .body-agregar textarea, .body-agregar select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.body-agregar textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.body-agregar .boton-add{
+    background-color: var(--secondary-color);
+}
+
+.body-agregar .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.body-agregar .btn:hover {
+    background-color: #159b91;
+}
+
+.body-agregar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.body-agregar th, .body-agregar td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.body-agregar th {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.body-agregar tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.body-agregar .site-image {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.body-agregar .boton-eliminar{
+    background-color: rgb(255, 83, 83);
+}
+
+.body-agregar footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+
+    .body-agregar .form-section, .table-section {
+        padding: 1rem;
+    }
+
+    .body-agregar table, .body-agregar thead, .body-agregar tbody, .body-agregar th, .body-agregar td, .body-agregar tr {
+        display: block;
+    }
+
+    .body-agregar thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .body-agregar tr {
+        margin-bottom: 1rem;
+    }
+
+    .body-agregar td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .body-agregar td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+}
