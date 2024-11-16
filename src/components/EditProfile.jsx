@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from './Navbar'; // Asegúrate de que el Navbar esté importado
 import '../css/stylesEditprofile.css';
+import { Footer } from './Footer';
 
 export const EditProfile = () => {
     const navigate = useNavigate();
@@ -99,6 +100,8 @@ export const EditProfile = () => {
                         </div>
                     </section>
                 </main>
+
+                <Footer />
             </div>
         </>
     );

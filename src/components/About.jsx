@@ -74,7 +74,7 @@ export const About = () => {
 
                 <footer>
                     <div className="container">
-                        <p>&copy; 2023 Viajando-Ando. Todos los derechos reservados.</p>
+                        <p>&copy; 2024 Viajando-Ando. Todos los derechos reservados.</p>
                     </div>
                 </footer>
             </div>

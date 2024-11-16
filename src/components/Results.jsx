@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Navbar } from './Navbar';
+import { Footer } from "./Footer";
 import '../css/results.css';
 
 export const Results = () => {
@@ -75,11 +76,7 @@ export const Results = () => {
                 </section>
             </main>
 
-            <footer>
-                <div class="container">
-                    <p>&copy; 2023 Viajando-Ando. Todos los derechos reservados.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

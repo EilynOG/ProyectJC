@@ -1,0 +1,120 @@
+:root {
+    --primary-color: #1CB2A7;
+    --secondary-color: #93F781;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --light-text: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body-footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.body-footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.body-footer footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 3rem 0;
+}
+
+.body-footer .footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.body-footer .footer-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.body-footer .footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.body-footer .footer-section p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.body-footer .footer-links {
+    list-style: none;
+}
+
+.body-footer .footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.body-footer .footer-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.body-footer .footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.body-footer .social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.body-footer .social-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.body-footer .social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.body-footer .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.body-footer .footer-bottom p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.body-footer .footer-bottom a {
+    color: var(--light-text);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.body-footer .footer-bottom a:hover {
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .body-footer .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .body-footer .footer-content {
+        grid-template-columns: 1fr;
+    }
+}

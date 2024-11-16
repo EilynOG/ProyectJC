@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from './Navbar'; // Asegúrate de que el Navbar esté importado
 import '../css/addlocation.css';
+import { Footer } from "./Footer";
 
 export const AddLocation = () => {
     const [name, setName] = useState("");
@@ -210,6 +211,8 @@ export const AddLocation = () => {
                         </table>
                     </section>
                 </main>
+
+                <Footer />
             </div>
         </>
     );
