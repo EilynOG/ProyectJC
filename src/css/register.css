@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body-register {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.body-register .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.body-register .register-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.body-register h1 {
+    color: #1CB2A7;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.body-register .input-group {
+    margin-bottom: 1rem;
+}
+
+.body-register label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.body-register #email, .body-register #password, .body-register #name {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #1CB2A7;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.body-register #email:focus, .body-register #password:focus, .body-register #name:focus {
+    outline: none;
+    border-color: #159b91;
+}
+
+.body-register button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1CB2A7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.body-register button:hover {
+    background-color: #159b91;
+}
+
+.body-register .login-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #333;
+}
+
+.body-register .login-link a {
+    color: #1CB2A7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.body-register .login-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .body-register .register-container {
+        padding: 1.5rem;
+    }
+
+    .body-register input, .body-register button {
+        padding: 0.6rem;
+    }
+}

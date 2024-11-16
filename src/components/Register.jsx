@@ -1,13 +1,21 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
+import '../css/register.css';
 
 export const Register = () => {
     const navigate = useNavigate();
+    const [message, setMessage] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const nombre = event.target.elements.nombre.value;
-        const correo = event.target.elements.correo.value;
-        const password = event.target.elements.password.value;
+        setMessage('');
+        setError('');
+
+        const sanitizeInput = (input) => input.trim();
+        const nombre = sanitizeInput(event.target.elements.name.value);
+        const correo = sanitizeInput(event.target.elements.email.value);
+        const password = sanitizeInput(event.target.elements.password.value);
 
         try {
             const response = await fetch('https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/users', {
@@ -19,37 +27,46 @@ export const Register = () => {
             });
 
             if (response.ok) {
-                alert("Usuario registrado exitosamente");
+                setMessage("Usuario registrado exitosamente");
                 navigate('/');
             } else {
-                alert("Error al registrar el usuario");
+                const errorData = await response.json();
+                setError(`Error al registrar el usuario: ${errorData.message || 'Error desconocido'}`);
             }
         } catch (error) {
             console.error("Error:", error);
-            alert("Hubo un problema al registrar el usuario");
+            setError("Hubo un problema al registrar el usuario. Por favor, inténtalo más tarde.");
         }
     };
 
     return (
-        <main className="register">
-            <form onSubmit={handleSubmit}>
-                <h1>Registro de Usuario</h1>
-                <fieldset>
-                    <label>
-                        Nombre
-                        <input type="text" placeholder="Nombre" required name="nombre" />
-                    </label>
-                    <label>
-                        Correo
-                        <input type="email" placeholder="ejemplo@email.com" required name="correo" />
-                    </label>
-                    <label>
-                        Contraseña
-                        <input type="password" placeholder="******" required name="password" />
-                    </label>
-                </fieldset>
-                <button>Registrar</button>
-            </form>
-        </main>
+        <>
+            <div className="body-register">
+                <div className="background-image"></div>
+                <div className="register-container">
+                    <h1>Registro de Usuario</h1>
+                    <form onSubmit={handleSubmit}>
+                        <div className="input-group">
+                            <label htmlFor="name">Nombre</label>
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="password">Contraseña</label>
+                            <input type="password" id="password" name="password" required placeholder="Tu contraseña" />
+                        </div>
+                        {message && <p className="success-message">{message}</p>}
+                        {error && <p className="error-message">{error}</p>}
+                        <button type="submit">Registrarse</button>
+                    </form>
+                    <div className="login-link">
+                        <p>¿Ya tienes una cuenta? <Link to="/">Inicia sesión</Link></p>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };

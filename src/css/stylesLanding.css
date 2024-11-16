@@ -1,93 +1,254 @@
 :root {
-    color-scheme: dark;
+    --primary-color: #1CB2A7;
+    --secondary-color: #8FD14F;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --light-text: #ffffff;
 }
 
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #121212;
-    color: #fff;
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
-.landing-page {
-    padding: 40px;
-    text-align: center;
+.body-landing {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
-.page-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #ffcc00;
-}
-
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    justify-items: center;
-}
-
-.card {
-    background-color: #2c2c2c;
-    border-radius: 15px;
-    padding: 20px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card-image {
+.body-landing .container {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.card-title {
+.body-landing header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.body-landing .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.body-landing .logo {
     font-size: 1.5rem;
-    margin-top: 15px;
-    color: #ffcc00;
-}
-
-.card-location,
-.card-review,
-.card-rating {
-    margin-top: 10px;
-    color: #dcdcdc;
-    font-size: 0.9rem;
-}
-
-.login-button {
-    background-color: #ffcc00;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1rem;
     font-weight: bold;
-    color: #121212;
-    border-radius: 30px;
-    cursor: pointer;
-    margin-top: 30px;
+}
+
+.body-landing nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.body-landing nav ul li {
+    margin-left: 20px;
+}
+
+.body-landing nav ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.body-landing nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.body-landing main{
+    width: 100%;
+}
+
+.body-landing .hero {
+    background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text);
+    position: relative;
+}
+
+.body-landing .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.body-landing .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.body-landing .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.body-landing .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.body-landing .btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.login-button:hover {
-    background-color: #ffb300;
+.body-landing .btn:hover {
+    background-color: #7ac33c;
+}
+
+.body-landing .features {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.body-landing .features h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.body-landing .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.body-landing .feature-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.body-landing .feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.body-landing .feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.body-landing .recent-posts {
+    padding: 4rem 0;
+}
+
+.body-landing .recent-posts h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.body-landing .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.body-landing .post-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.body-landing .post-card:hover {
+    transform: translateY(-5px);
+}
+
+.body-landing .post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.body-landing .post-content {
+    padding: 1.5rem;
+}
+
+.body-landing .post-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.body-landing .post-excerpt {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.body-landing .post-meta {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.body-landing footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
 }
 
 @media (max-width: 768px) {
-    .cards-container {
-        grid-template-columns: repeat(2, 1fr);
+    .body-landing .header-content {
+        flex-direction: column;
+    }
+
+    .body-landing nav ul {
+        margin-top: 1rem;
+    }
+
+    .body-landing nav ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .body-landing .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .body-landing .hero p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .cards-container {
+    .body-landing .hero h1 {
+        font-size: 2rem;
+    }
+
+    .body-landing .feature-grid, .post-grid {
         grid-template-columns: 1fr;
     }
 }
