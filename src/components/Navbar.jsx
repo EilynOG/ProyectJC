@@ -40,7 +40,7 @@ export const Navbar = () => {
                                 <li><Link to="/results">Inicio</Link></li>
                                 <li><Link to="/add-location">Agregar sitio</Link></li>
                                 <li><Link to="/edit-profile">Editar perfil</Link></li>
-                                <li><button onClick={handleLogout}>Cerrar sesión</button></li>
+                                <li><button onClick={handleLogout} className='btn-sesion-close'>Cerrar sesión</button></li>
                             </ul>
                         </nav>
                     </div>

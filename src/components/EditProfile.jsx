@@ -50,48 +50,56 @@ export const EditProfile = () => {
     };
 
     return (
-        <div className="edit-profile">
-            <Navbar /> {/* Se ha agregado el Navbar aquí */}
-            <h1>Editar Perfil</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Nombre</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Correo Electrónico</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Contraseña</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                    />
-                </div>
-                <button type="submit">Guardar Cambios</button>
-            </form>
-            <div className="buttons-container">
-                <button onClick={goToForum}>Ir al Foro</button>
-                <button onClick={handleLogout}>Cerrar sesión</button>
+        <>
+            <div className='body-profile'>
+                <Navbar /> {/* Se ha agregado el Navbar aquí */}
+                <main className="container">
+                    <section className='profile-section'>
+                        <h2>Editar Perfil</h2>
+                        <form onSubmit={handleSubmit} id="profile-form">
+                            <div className='profile-info'>
+                                <div className="form-group">
+                                    <label htmlFor="name">Nombre</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Correo Electrónico</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="password">Contraseña</label>
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        value={formData.password}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <button type="submit" className='btn'>Guardar Cambios</button>
+                            </div>
+                        </form>
+                        <div className="buttons-container">
+                            <button onClick={goToForum} className='btnforo'>Ir al Foro</button>
+                            <button onClick={handleLogout} className='btnsesion'>Cerrar sesión</button>
+                        </div>
+                    </section>
+                </main>
             </div>
-        </div>
+        </>
     );
 };

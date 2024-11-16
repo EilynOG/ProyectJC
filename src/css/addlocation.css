@@ -73,7 +73,20 @@
 }
 
 .body-agregar .boton-add{
+    display: inline-block;
     background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.body-agregar .boton-add:hover{
+    background-color: #6db660;
 }
 
 .body-agregar .btn {
