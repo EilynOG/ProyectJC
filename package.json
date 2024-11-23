@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d ProyectJC"
+    "deploy": "gh-pages -d ProyectoJC"
   },
   "dependencies": {
     "react": "^18.3.1",
