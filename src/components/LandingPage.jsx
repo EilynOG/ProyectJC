@@ -60,7 +60,7 @@ export const LandingPage = () => {
                         <div className="hero-content">
                             <h1>Explora, Comparte, Inspira</h1>
                             <p>Únete a nuestra comunidad de viajeros y comparte tus experiencias únicas</p>
-                            <button className="btn" onClick={() => navigate('/aventura')}>Comienza tu aventura</button>
+                            <button className="btn" onClick={() => navigate('/login')}>Comienza tu aventura</button>
                         </div>
                     </section>
                 
